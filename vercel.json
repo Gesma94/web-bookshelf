@@ -1,19 +1,17 @@
 {
-    "version": 2,
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "installCommand": "npm ci",
+    "installCommand": "npm install",
     "builds": [
         {
-            "src": "dist/entry.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["dist/**"] }
+          "src": "dist/entry.js", 
+          "use": "@vercel/node"
         }
-    ],
-    "routes": [
+      ],
+      "routes": [
         {
-            "src": "/(.*)",
-            "dest": "dist/entry.js"
+          "src": "/(.*)",
+          "dest": "dist/entry.js"
         }
-    ]
+      ]
 }
