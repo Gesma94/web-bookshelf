@@ -1,12 +1,10 @@
 import express = require("express");
 
-export const app = express();
+const SERVICE_NAME = process.env.SERVICE_NAME ?? "localhost";
 
-app.get('/', (request, response) => {
-    response.sendStatus(200);
-});
+export const app = express();
 
 app.get('/ping', (request, response) => {
     console.log("[REQUEST] '/ping'");
-    response.status(200).send("Server is running ✅");
+    response.status(200).send(`[${SERVICE_NAME}] returns Pong 🏓`);
 });
